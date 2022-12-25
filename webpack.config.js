@@ -11,7 +11,8 @@ module.exports = {
   mode: "development",
   entry: {
     // 폴더명
-    main: "./src/app.js",
+    // main: "./src/app.js",
+    main: "./app.js",
   },
   output: {
     // 절대경로를 입력해야하므로 path 모듈을 가져옴
@@ -66,6 +67,13 @@ module.exports = {
           limit: 20000, // 20kb
         },
       },
+
+      // 5. babel-loader
+      {
+        test: /\.js$/,
+        loader: 'babel-loader',
+        exclude: /node_modules/
+      }
     ],
   },
   plugins: [
